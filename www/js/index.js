@@ -44,7 +44,8 @@ var app = {
         //URL to Lallemand site
         var ref = window.open('https://doit-lallemandinternodev001.cs77.force.com/', '_blank', 'location=no', 'hideurlbar=yes', 'toolbar=no','useWideViewPort=yes');
         ref.addEventListener('exit', function(event) {
-            alert('Ha salido de la sesión.');
+            //alert('Ha salido de la sesión.');
+            this.initialize();
         });
         
         //cordova.InAppBrowser.open('https://doit-lallemandinternodev001.cs77.force.com/', '_blank', 'location=no', 'hideurlbar=yes', 'toolbar=no','useWideViewPort=yes');
