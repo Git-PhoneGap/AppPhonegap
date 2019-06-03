@@ -35,9 +35,21 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {        
         console.log('onDeviceReady');
+        //Deshabilita botón atrás pero no dentro de InAppBrowser
+        /*
+        document.addEventListener("backbutton", function (e) {
+            e.preventDefault();
+        }, false );
+        */
         //URL to Lallemand site
-        cordova.InAppBrowser.open('https://doit-lallemandinternodev001.cs77.force.com/', '_blank', 'location=no', 'hideurlbar=yes', 'toolbar=no','useWideViewPort=yes');
-        window.open = cordova.InAppBrowser.open;
+        var ref = window.open('https://doit-lallemandinternodev001.cs77.force.com/', '_blank', 'location=no', 'hideurlbar=yes', 'toolbar=no','useWideViewPort=yes');
+        ref.addEventListener('exit', function(event) {
+            //alert('Ha salido de la sesión.');
+            window.reload();
+        });
+        
+        //cordova.InAppBrowser.open('https://doit-lallemandinternodev001.cs77.force.com/', '_blank', 'location=no', 'hideurlbar=yes', 'toolbar=no','useWideViewPort=yes');
+        //window.open = cordova.InAppBrowser.open;
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
@@ -51,4 +63,6 @@ var app = {
 
         console.log('Received Event: ' + id);
     },
+
+    //app.initialize();
 };
