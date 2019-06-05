@@ -4,8 +4,8 @@
     <description>
         Lallemand - seguimiento de pedidos.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        Lallemand
+    <author email="cristina@doitcloud.consulting" href="http://www.doitcloudconsulting.mx/">
+        CPC
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
